@@ -39,8 +39,7 @@ ENV POSTGRE_NAME=postgres
 ENV POSTGRE_USER=postgres
 ENV POSTGRE_PASSWORD=
 ENV POSTGRE_PORT=5432
-ENV POSTGRE_HOST=db
-
+ENV POSTGRE_HOST=['localhost','127.0.0.1','traffic-africa-annotator.herokuapp.com']
 
 
 ENTRYPOINT ["./deploy/docker-entrypoint.sh"]
