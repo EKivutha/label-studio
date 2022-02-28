@@ -1,5 +1,7 @@
+
 # syntax=docker/dockerfile:1.3
 FROM ubuntu:20.04
+ENV DOCKER_BUILDKIT=1
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PIP_CACHE_DIR=/.cache \
