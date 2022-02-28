@@ -1,13 +1,6 @@
 version: "3.3"
 
 services:
-  label_studio:
-    image: mutunjau/label-studio:latest
-    container_name: label_studio
-    ports:
-      - 8080:8080
-    volumes:
-      - ./mydata:/label-studio/data
   nginx:
     image: nginx:1.21
     ports:
