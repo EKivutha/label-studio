@@ -1,1 +1,1 @@
-FROM trafficafrica/label-studio:latest
+FROM mutunjau/label-studio:latest

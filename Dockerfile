@@ -39,7 +39,7 @@ ENV POSTGRE_PASSWORD=
 ENV POSTGRE_PORT=5432
 ENV POSTGRE_HOST=db
 
-RUN docker-compose up
+
 
 ENTRYPOINT ["./deploy/docker-entrypoint.sh"]
 CMD ["label-studio"]
