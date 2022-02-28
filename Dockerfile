@@ -35,17 +35,14 @@ RUN --mount=type=cache,target=$PIP_CACHE_DIR \
 COPY . /label-studio
 RUN --mount=type=cache,target=$PIP_CACHE_DIR \
     pip3 install psycopg2-binary
-    
+
 EXPOSE 8080
 RUN ./deploy/prebuild_wo_frontend.sh
 
+ENV DATABASE_URL='postgres://pksvgoiqkjgvcn:80623705d21055580390fb6fd93ab1bf8171f64d85a39838a4fa75d63e8b1395@ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/d8krgibv3b63l3'
 
-ENV DJANGO_DB=default
-ENV POSTGRE_NAME=postgres
-ENV POSTGRE_USER=postgres
-ENV POSTGRE_PASSWORD=
-ENV POSTGRE_PORT=5432
-ENV POSTGRE_HOST=db 
+
+
 # ['localhost','127.0.0.1','traffic-africa-annotator.herokuapp.com']
 
 
