@@ -32,5 +32,14 @@ RUN --mount=type=cache,target=$PIP_CACHE_DIR \
 EXPOSE 8080
 RUN ./deploy/prebuild_wo_frontend.sh
 
+ENV DJANGO_DB=default
+ENV POSTGRE_NAME=postgres
+ENV POSTGRE_USER=postgres
+ENV POSTGRE_PASSWORD=
+ENV POSTGRE_PORT=5432
+ENV POSTGRE_HOST=db
+
+RUN docker-compose up
+
 ENTRYPOINT ["./deploy/docker-entrypoint.sh"]
 CMD ["label-studio"]
