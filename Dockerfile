@@ -3,6 +3,7 @@
 FROM ubuntu:20.04
 ENV DOCKER_BUILDKIT=1
 
+
 ENV DEBIAN_FRONTEND=noninteractive \
     PIP_CACHE_DIR=/.cache \
     DJANGO_SETTINGS_MODULE=core.settings.label_studio \
@@ -31,15 +32,21 @@ COPY . /label-studio
 RUN --mount=type=cache,target=$PIP_CACHE_DIR \
     pip3 install -e .
 
+COPY . /label-studio
+RUN --mount=type=cache,target=$PIP_CACHE_DIR \
+    pip3 install psycopg2-binary
+    
 EXPOSE 8080
 RUN ./deploy/prebuild_wo_frontend.sh
+
 
 ENV DJANGO_DB=default
 ENV POSTGRE_NAME=postgres
 ENV POSTGRE_USER=postgres
 ENV POSTGRE_PASSWORD=
 ENV POSTGRE_PORT=5432
-ENV POSTGRE_HOST=['localhost','127.0.0.1','traffic-africa-annotator.herokuapp.com']
+ENV POSTGRE_HOST=db 
+# ['localhost','127.0.0.1','traffic-africa-annotator.herokuapp.com']
 
 
 ENTRYPOINT ["./deploy/docker-entrypoint.sh"]

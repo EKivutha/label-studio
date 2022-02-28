@@ -64,7 +64,7 @@ Docker Compose script provides production-ready stack consisting of the followin
 
 To start using the app from `http://localhost` run this command:
 ```bash
-docker-compose up
+COMPOSE_DOCKER_CLI_BUILD=1 docker-compose up
 ```
 
 ### Install locally with pip

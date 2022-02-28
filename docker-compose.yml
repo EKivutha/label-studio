@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   label_studio:
-    image: heartexlabs/label-studio:latest
+    image: mutunjau/label-studio:latest
     container_name: label_studio
     ports:
       - 8080:8080
@@ -39,7 +39,7 @@ services:
     stdin_open: true
     tty: true
     build: .
-    image: heartexlabs/label-studio:latest
+    image: mutunjau/label-studio:latest
     expose:
       - "8080"
     depends_on:
