@@ -50,6 +50,7 @@ services:
       - POSTGRE_USER=postgres
       - POSTGRE_PASSWORD=
       - POSTGRE_PORT=5432
+      - DATABASE_URL='postgres://pksvgoiqkjgvcn:80623705d21055580390fb6fd93ab1bf8171f64d85a39838a4fa75d63e8b1395@ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/d8krgibv3b63l3'
       - POSTGRE_HOST=db
       - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
       - LABEL_STUDIO_COPY_STATIC_DATA=true
